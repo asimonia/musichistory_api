@@ -15,28 +15,28 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
 class GenreSerializer(serializers.HyperlinkedModelSerializer):
 
 	class Meta:
-		model = Genre
-		fields = ('label')
+		model = models.Genre
+		fields = ('label',)
 
 
 class ArtistSerializer(serializers.HyperlinkedModelSerializer):
 	
 	class Meta:
-		model = Artist
-		fields = ('name', 'year_established')
+		model = models.Artist
+		fields = ('name', 'year_established',)
 
 
 class AlbumSerializer(serializers.HyperlinkedModelSerializer):
 	
 	class Meta:
-		model = Album
+		model = models.Album
 		fields = ('title', 'release_date', 'album_length', 'num_stars', 
-			'label', 'artist', 'genres')
+			'label', 'artist', 'genres',)
 
 
 class SongSerializer(serializers.HyperlinkedModelSerializer):
 	
 	class Meta:
-		model = Song
+		model = models.Song
 		fields = ('title', 'song_length', 'release_date', 'plays', 'artist',
-			'album', 'user')
+			'album', 'user',)
